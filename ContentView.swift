@@ -12,45 +12,58 @@ struct ContentView: View {
     @State var count1: Int = 0
     var body: some View {
         ZStack{
-            background(Color.red)
-                VStack{
-                    Image("yam-1")
-                        .resizable()
-                        .background(Color.gray)
-                    Image("yam")
-                        .resizable()
-                        .background(Color.white)
-            
-                }
+            VStack{
+                
+                Image("eric3")
+                    .resizable()
+                    .ignoresSafeArea()
+                    
+                Image("eric2")
+                    .resizable()
+                    .ignoresSafeArea()
+                
+            }
+        
             
             VStack{
                 Text("EH5 trivia counter")
-                Spacer()
-                Text("Team David: \(count) ")
-                    .fontWeight(.semibold)
                     .font(.title)
+                    .foregroundColor(Color.black)
+                    .background(Color.white)
+                
+                Text("\(count) ")
+                    .font(.custom("Helvetica",size:80))
+                    .fontWeight(.black)
+                    .multilineTextAlignment(.center)
+                    .shadow(color:.white,radius: 20)
+                    .padding()
                 //first row of buttons
-                VStack{
+                HStack{
                     Button {
                         self.count += 1
                     } label: {
-                        Text("Increment")
-                            .font(.title2)
+                        Text("+")
+                            .font(.custom("Helvetica",size:90))
+                            .fontWeight(.heavy)
                             .padding()
                             .frame(width: 200, height: 100, alignment: .center)
-                            .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .foregroundColor(Color.green)
+                            .background(Color.clear)
+                            .shadow(color: .black, radius:10)
+                            .border(.green,width: 5)
                             .cornerRadius(20)
                     }
                     Button {
                         self.count -= 1
                     } label: {
-                        Text("Minus")
-                            .font(.title2)
+                        Text("-")
+                            .font(.custom("Helvetica",size:90))
                             .padding()
-                            .frame(width: 200, height: .infinity, alignment: .center)
-                            .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .foregroundColor(Color.red)
+                            .background(Color.clear)
+                            .shadow(color: .black, radius:10)
+                            .border(.red,width: 5)
                             .cornerRadius(20)
                     }
                     
@@ -64,35 +77,43 @@ struct ContentView: View {
                 
                 
                 Spacer()
+                
     //--------------------------------------------
-                Text("Team Not David: \(count1) ")
+                Text("\(count1) ")
+                    .font(.custom("Helvetica",size:80))
                     .fontWeight(.semibold)
-                    .font(.title)
-                VStack{
+                    .multilineTextAlignment(.center)
+                    .frame(width: 100.0, height: 105.0)
+                    .shadow(color:.white,radius: 20)
+                HStack{
                     Button {
                         self.count1 += 1
                     } label: {
-                        Text("Increment")
-                            .font(.title2)
+                        Text("+")
+                            .font(.custom("Helvetica",size:90))
+                            .fontWeight(.heavy)
                             .padding()
-                            .frame(width: 200, height: .infinity, alignment: .center)
-                            .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .frame(width: 200, height: 100, alignment: .center)
+                            .foregroundColor(Color.green)
+                            .background(Color.clear)
+                            .shadow(color: .black, radius:10)
+                            .border(.green,width: 5)
                             .cornerRadius(20)
-                        
                     }
                     Button {
                         self.count1 -= 1
                     } label: {
-                        Text("Minus")
-                            .font(.title2)
+                        Text("-")
+                            .font(.custom("Helvetica",size:90))
                             .padding()
-                            .frame(width: 200, height: .infinity, alignment: .center)
-                            .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .foregroundColor(Color.red)
+                            .background(Color.clear)
+                            .shadow(color: .black, radius:10)
+                            .border(.red,width: 5)
                             .cornerRadius(20)
                     }
-
+                    
                 }
                 
                 
@@ -105,13 +126,16 @@ struct ContentView: View {
                 Spacer()
 
             }
-        }
+        }//Zstack
+        
+        
     }
 }
 //-------------------------------------------
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewDevice("iPhone 8")
             .previewInterfaceOrientation(.portrait)
     }
 }
