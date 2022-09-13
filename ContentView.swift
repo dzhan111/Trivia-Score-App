@@ -26,16 +26,16 @@ struct ContentView: View {
         
             
             VStack{
-                Text("EH5 trivia counter")
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .background(Color.white)
+                
+                    
+                Spacer()
                 
                 Text("\(count) ")
-                    .font(.custom("Helvetica",size:80))
+                    .font(.custom("Helvetica",size:90))
                     .fontWeight(.black)
                     .multilineTextAlignment(.center)
-                    .shadow(color:.white,radius: 20)
+                    //.shadow(color:.white,radius: 20)
+                    .foregroundColor(.white)
                     .padding()
                 //first row of buttons
                 HStack{
@@ -68,23 +68,27 @@ struct ContentView: View {
                     }
                     
                 }
+                
+                
                 Button {
                     self.count = 0
                 } label: {
-                    Text("reset")
+                    Text("Reset")
                         .font(.title2)
+                        .fontWeight(.heavy)
+                        
                 }
                 
-                
                 Spacer()
-                
+                Spacer()
     //--------------------------------------------
                 Text("\(count1) ")
-                    .font(.custom("Helvetica",size:80))
-                    .fontWeight(.semibold)
+                    .font(.custom("Helvetica",size:90))
+                    .fontWeight(.black)
                     .multilineTextAlignment(.center)
-                    .frame(width: 100.0, height: 105.0)
-                    .shadow(color:.white,radius: 20)
+                    //.shadow(color:.white,radius: 20)
+                    .foregroundColor(.white)
+                    .padding()
                 HStack{
                     Button {
                         self.count1 += 1
@@ -116,12 +120,12 @@ struct ContentView: View {
                     
                 }
                 
-                
                 Button {
                     self.count1 = 0
                 } label: {
-                    Text("reset")
+                    Text("Reset")
                         .font(.title2)
+                        .fontWeight(.heavy)
                 }
                 Spacer()
 
@@ -135,7 +139,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewDevice("iPhone 8")
+            .previewDevice("iPhone 13")
             .previewInterfaceOrientation(.portrait)
     }
 }
